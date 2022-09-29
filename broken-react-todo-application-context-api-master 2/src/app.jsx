@@ -39,11 +39,13 @@ const todosTemplate = [
 ];
 
 export const App = () => {
-  const [todos, setTodos] = React.useState([]);
+  // have initial state include the todos template; remove empty array since todosTemplate is already an array
+  const [todos, setTodos] = React.useState(todosTemplate);
 
   return (
     <div className="root">
-      <TodosContext.Provider value={{ todos }}>
+      {/* pass setTodos into useContext ability along with todos */}
+      <TodosContext.Provider value={{ todos, setTodos }}>
         <TodoList />
         <TodoResults />
         <TodoForm />

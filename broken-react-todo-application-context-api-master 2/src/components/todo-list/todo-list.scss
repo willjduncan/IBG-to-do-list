@@ -16,6 +16,9 @@
   &-content {
     display: flex;
     justify-content: center;
+    //turn content into columns
+    flex-direction: column;
+
   }
 }
 
